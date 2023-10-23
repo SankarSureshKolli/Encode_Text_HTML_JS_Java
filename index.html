@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Encoder</title>
+</head>
+<body>
+    <h1>Text Encoder</h1>
+    <form id="encoderForm">
+        <label for="textToEncode">Text to Encode:</label>
+        <input type="text" id="textToEncode" name="textToEncode">
+        <input type="submit" value="Encode">
+    </form>
+    <p>Encoded Text: <span id="encodedText"></span></p>
+    <script>
+        document.getElementById('encoderForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            const textToEncode = document.getElementById('textToEncode').value;
+            fetch('http://localhost:8080/encode?text=' + encodeURIComponent(textToEncode))
+                .then(response => response.text())
+                .then(encodedText => {
+                    document.getElementById('encodedText').textContent = encodedText;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
