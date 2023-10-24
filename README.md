@@ -2,6 +2,9 @@
 This repository provides HTML file for front end that takes input from user. This HTML file is embedded with JavaScript. The Javascript code listens for the form submission event and makes a GET request to the server. This server is created using Java and hosted locally and listens on port 8080.
 
 
+Prerequsites:
+1. Use java 11 or later version to run this code. I tried running the same code in java 8 but facing some errors(will try to fix it later). So better to use java 11 or later for now.
+
 To run this. Follow below steps:
 
 1. Download 'index.html' file and 'TextEncoderHttpServer.java' files.
